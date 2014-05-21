@@ -1,97 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 
-    <packaging>jar</packaging>
-    <groupId>org.webjars</groupId>
-    <artifactId>jquery-form</artifactId>
-    <version>3.28.0-2014.02.06-1-SNAPSHOT</version>
-    <name>jQuery Form Plugin</name>
-    <description>WebJar for jQuery Form Plugin</description>
-    <url>http://webjars.org</url>
+	<packaging>jar</packaging>
+	<groupId>org.webjars</groupId>
+	<artifactId>jquery-form</artifactId>
+	<version>3.28.0-2014.02.06-1-SNAPSHOT</version>
+	<name>jQuery Form Plugin</name>
+	<description>WebJar for jQuery Form Plugin</description>
+	<url>http://webjars.org</url>
 
-    <developers>
-        <developer>
-            <id>kpelykh</id>
-            <name>Konstantin Pelykh</name>
-            <email>kpelykh@gmail.com</email>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>kpelykh</id>
+			<name>Konstantin Pelykh</name>
+			<email>kpelykh@gmail.com</email>
+		</developer>
+	</developers>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <distribution>repo</distribution>
-        </license>
-        <license>
-            <name>GPL License</name>
-            <url>http://malsup.github.com/gpl-license-v2.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+		<license>
+			<name>GPL License</name>
+			<url>http://malsup.github.com/gpl-license-v2.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-    <scm>
-        <url>http://github.com/webjars/jquery-form</url>
-        <connection>scm:git:https://github.com/webjars/jquery-form.git</connection>
-        <developerConnection>scm:git:https://github.com/webjars/jquery-form.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+	<scm>
+		<url>http://github.com/webjars/jquery-form</url>
+		<connection>scm:git:https://github.com/webjars/jquery-form.git</connection>
+		<developerConnection>scm:git:https://github.com/webjars/jquery-form.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>1.8.3</version>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+	</dependencies>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>3.28.0-2013.02.06</upstream.version>
-        <upstream.url>http://malsup.github.com</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<upstream.version>3.28.0-2013.02.06</upstream.version>
+		<upstream.url>http://malsup.github.com</upstream.url>
+		<destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+	</properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0-beta-4</version>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>${upstream.url}</url>
-                            <fromFile>jquery.form.js</fromFile>
-                            <toFile>${destDir}/jquery.form.js</toFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-5</version>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>download-single</goal>
+						</goals>
+						<configuration>
+							<url>${upstream.url}</url>
+							<fromFile>jquery.form.js</fromFile>
+							<toFile>${destDir}/jquery.form.js</toFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
-            </plugin>
-        </plugins>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <targetPath>${destDir}</targetPath>
-            </resource>
-        </resources>
-    </build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-patch-plugin</artifactId>
+				<version>1.1.1</version>
+				<configuration>
+					<patches>
+						<patch>options-array.patch</patch>
+					</patches>
+					<targetDirectory>${destDir}</targetDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>patch</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>apply</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<targetPath>${destDir}</targetPath>
+			</resource>
+		</resources>
+	</build>
 
 </project>

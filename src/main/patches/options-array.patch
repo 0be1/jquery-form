@@ -11,7 +11,7 @@ index 9606f91..d354291 100644
 +    		$.merge(callbacks, options.success);
 +    	}
 +    	else {
-+    		callbaks.push(options.success);
++    		callbacks.push(options.success);
 +    	}
      }
  

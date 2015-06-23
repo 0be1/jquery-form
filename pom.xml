@@ -12,7 +12,7 @@
 	<packaging>jar</packaging>
 	<groupId>org.webjars</groupId>
 	<artifactId>jquery-form</artifactId>
-	<version>3.28.0-2014.02.06-1-SNAPSHOT</version>
+	<version>3.51.0-2014.06.20-SNAPSHOT</version>
 	<name>jQuery Form Plugin</name>
 	<description>WebJar for jQuery Form Plugin</description>
 	<url>http://webjars.org</url>
@@ -55,7 +55,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<upstream.version>3.28.0-2013.02.06</upstream.version>
+		<upstream.version>3.51.0-2014.06.20</upstream.version>
 		<upstream.url>http://malsup.github.com</upstream.url>
 		<destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
 	</properties>
@@ -84,7 +84,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5</version>
 			</plugin>
 
 			<plugin>
